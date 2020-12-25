@@ -1,0 +1,304 @@
+button{
+    border: solid 1px white;
+    padding: 5px;
+    background: blue;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+.danger-btn {
+    border: solid 1px white;
+    padding: 5px;
+    background: #ff0000;
+    font-size: 14px;
+    color: white;
+    text-align: center; 
+}
+.new-btn {
+    border: solid 1px white;
+    padding: 5px;
+    background: #515be9;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+.success-btn {
+    border: solid 1px white;
+    padding: 5px;
+    background: green;
+    font-size: 14px;
+    color: white;
+    text-align: center; 
+}
+
+.container {
+    width: 100%;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+}
+
+.header-left {
+    flex: 1 2 auto;
+}
+
+.header-logo{
+    border: solid 1px cornflowerblue;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #b6e1ed;
+    display: flex;
+}
+
+.logo {
+    width: 30%;
+    font-size: 25px;
+    font-family: bold;
+    padding: 5px;
+}
+
+.menu {
+    width: 70%;
+    padding: 9px;
+    text-align: right;
+}
+
+.action-header{
+    border: solid 1px cornflowerblue;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #b6e1ed;
+    display: flex;
+}
+
+.header-right {
+    padding: 10px 15px 15px 15px;
+}
+
+select {
+    height: 27px;
+}
+.type-affichage {
+    width: 40%;
+    padding: 5px;
+}
+
+.change-vue {
+    width: 26%;
+    padding: 5px 33px 9px 5px;
+    display: flex;
+}
+.direction {
+    width: 25px;
+    background: blue;
+    color: white;
+    margin-left: 11px;
+    text-align: center;
+    font-size: 15px;
+}
+.group-dir {
+    display: flex;
+    float: right;
+}
+
+.dialog {
+    width: 60%;
+    border: solid 1px blue;
+}
+
+#content {
+    background: #f1f1f1;
+    border-radius: 0.25em;
+    min-height: 22em;
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}
+
+#content div[tab-content="yes"] {
+    opacity: 0;
+    padding: 1.5em;
+    position: absolute;
+    z-index: -100;
+}
+
+#dialog-container input[type="radio"]#tab-projet:checked ~ #content #content-project,
+#dialog-container input[type="radio"]#tab-taches:checked ~ #content #content-taches,
+#dialog-container input[type="radio"]#tab-apropos:checked ~ #content #content-apropos,
+#dialog-container input[type="radio"]#tab-parametres:checked ~ #content #content-parametres {
+    opacity: 1;
+    z-index: 100;
+    width: 100%;
+}
+
+input[type="radio"].visible {
+  visibility: visible !important;
+}
+
+#dialog-container input[type="radio"]:checked + label {
+	background: #f1f1f1;  
+	color: #444;  
+	position: relative;
+	z-index: 6;
+	 
+}
+
+#dialog-container input[type="radio"] {
+	height: 2.5em;
+	visibility: hidden;
+}
+
+#dialog-container label {
+	background: #f9f9f9; 
+	border-radius: .25em .25em 0 0;
+	color: #888; 
+	cursor: pointer;
+	display: block;
+	float: left;
+	font-size: 1em; 
+	height: 2.5em;
+	line-height: 2.5em;
+	margin-right: .25em;
+	padding: 0 1.5em;
+	text-align: center;
+}
+
+#dialog-container input[type="radio"]:hover + label {
+	background: #ddd;
+    color: #666; 
+}
+
+.dialog-action {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.row{
+    display: flex; 
+    padding-right: 33px;
+}
+
+.project-show-all{
+    margin-left: auto;
+}
+
+.list-project-container {
+    border: solid 1px #000;
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    width: 91%;
+    float: left;
+}
+
+.project-progress {
+     margin-left: auto;
+}
+
+.project-name {
+    width: 30%
+}
+
+table {
+    margin-top: 10px;
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  width: 95%;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 9px 5px;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245,245,245);
+}
+
+.day-name {
+    padding-right: 10px;
+}
+caption {
+  padding: 10px;
+}
+
+.up {
+    border: solid 1px #000;
+    width: 2%;
+    float: right;
+    margin-top: 10px;
+    margin-right: 31px;
+    height: 16px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.down {
+    border: solid 1px #000;
+    width: 2%;
+    float: right;
+    margin-right: 31px;
+    height: 16px;
+    text-align: center;
+}
+
+.day-name input[type="radio"] {
+    height: 1.5em!important;
+    visibility: visible!important;
+}
+
+.day-name input[type="color"] {
+    width: 197px;
+}
+
+#content-apropos textarea {
+    width: 92%;
+    height: 94px;
+}
+
+.alert {
+    background: red;
+    color: white;
+    border: solid 1px blue;
+}
+
+.inactive{
+    display: none;
+}
+
+.div-btn{
+    padding: 4px;
+}
+
+.form-control{
+    padding: 5px;
+    margin: 7px;
+
+}
+
+.form-label {
+    background: inherit!important;
+    padding: 0 0.5em!important;
+    width: 20%;
+    text-align: left!important;
+}
