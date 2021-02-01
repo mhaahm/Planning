@@ -22,6 +22,7 @@
   		'end' => $row['end_date']
   	];
   }
+  $dir = $_GET['dir']??0;
   $nbweek = 4;
 ?>
 <table>
@@ -31,10 +32,12 @@
              <th rowspan="2">Nom de la tâche</th>
              <?php  
              	$weeks_times = [];
-                for($i = $nbweek ; $i >= 0 ; $i--) { 
+                 for($i = $nbweek ; $i > 0 ; $i--) {
+                     $weeks_times[] = date('Y-m-d',strtotime("sunday -$i week"));
+                 }
+                for($i = count($weeks_times) ; $i >0  ; $i--) {
                   $time = strtotime("sunday -$i week");
                   $date = date('Y-m-d',$time);
-                  $weeks_times[] = $time;
                   $w = date('W',$time);
 
              ?>
@@ -42,7 +45,7 @@
          	 <?php } ?>
          </tr>
          <tr>
-             <?php 
+             <?php
                 $times = []; 
                 $first = min($weeks_times);
                 $last = max($weeks_times);

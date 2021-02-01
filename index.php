@@ -33,11 +33,13 @@ foreach ($rows as $row) {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script type="text/javascript" src="js/utils.js" defer></script>
-    <script type="text/javascript" src="js/app.js" defer></script>
+    <script type="text/javascript" src="js/app.mjs" defer ></script>
+    <script src="js/vue.global.js"></script>
     <title>Projet Pratique</title>
+
 </head>
 <body>
-<div class="container">
+<div class="container" id="main">
     <div class="header">
         <div class="header-left">
             <div class="header-logo">
@@ -53,7 +55,7 @@ foreach ($rows as $row) {
             <div class="action-header">
                 <div class="type-affichage">
                     <label>Type d'affichage</label>
-                    <select class="js-type-affichage">
+                    <select class="js-type-affichage" v-model="planningDisplayedType">
                         <option value="0">Jour + semaines</option>
                         <option value="1">Jour + mois</option>
                         <option value="2">Semaine + années</option>
@@ -65,10 +67,9 @@ foreach ($rows as $row) {
                     <div class="group-dir">
                         <button class="direction"><<</button>
                         <button class="direction"><</button>
-                        <button class="direction">></button>
+                        <button class="direction" v-on:click="incrementDate()">></button>
                         <button class="direction">>></button>
                     </div>
-
                 </div>
                 <div class="change-vue">
                     <label>Elargir / réduire la vue :</label>
@@ -241,4 +242,25 @@ AVIS A L'UTILISATEUR : Vous ne devez pas distribuer ou reproduire le logiciel da
 
 </dialog>
 </body>
+<script>
+    const app = {
+        data() {
+            return {
+                planningDisplayedType: ''
+            }
+        },
+        methods: {
+            async incrementDate(){
+               // get selected type
+                let show_type = this.planningDisplayedType
+                let res = await fetch(window.location+"/planning.php?typeAffichage="+show_type+'&dir=1', {
+                    method: 'GET'
+                });
+                let result = await res.text();
+                document.querySelector('.js-planning').innerHTML = result;
+            }
+        }
+    }
+    Vue.createApp(app).mount('#main');
+</script>
 </html>
